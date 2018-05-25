@@ -1,0 +1,47 @@
+From c6cb1d05f64e477b85c8eb96f7c5666c0f79bb4b Mon Sep 17 00:00:00 2001
+From: zakrent <szymon.zakrent@gmail.com>
+Date: Sat, 26 May 2018 00:01:13 +0200
+Subject: [PATCH] Added custom config
+
+---
+ config.def.h | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index 13d41a0..54ef0a5 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -5,7 +5,7 @@
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
++static char *font = "ProFont:Regular:pixelsize=12:antialias=true:autohint=true";
+ static int borderpx = 2;
+ 
+ /*
+@@ -121,7 +121,7 @@ static const char *colorname[] = {
+  * foreground, background, cursor, reverse cursor
+  */
+ unsigned int defaultfg = 7;
+-unsigned int defaultbg = 257;
++unsigned int defaultbg = 0;
+ static unsigned int defaultcs = 256;
+ static unsigned int defaultrcs = 257;
+ 
+@@ -190,6 +190,12 @@ static Shortcut shortcuts[] = {
+ 	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
+ 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+ 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
++	{ MODKEY,               XK_k,           kscrollup,      {.i =  1} },
++	{ MODKEY,               XK_j,           kscrolldown,    {.i =  1} },
++	{ MODKEY,               XK_Up,          kscrollup,      {.i =  1} },
++	{ MODKEY,               XK_Down,        kscrolldown,    {.i =  1} },
++	{ MODKEY,               XK_u,           kscrollup,      {.i = -1} },
++	{ MODKEY,               XK_d,           kscrolldown,    {.i = -1} },
+ };
+ 
+ /*
+-- 
+2.17.0
+
